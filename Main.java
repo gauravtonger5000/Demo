@@ -29,8 +29,8 @@ public class Main {
 	//			+ "123","29/02/2024","09 -Uttar Pradesh","143","CH1220224","51182338000R","ENG1k234","BRICK_RED","KeyN123","Greater Noida Showroom","NA","OK","123223","7537","23222","Bharat I");
 		
 		purchase.purchaseEntry("Local Purchase", "AAN MOTORS PVT. LTD.","01/03/2024","IV123","123","25/02/2024","Plant 2","4 MINUTE MILE MARKETING SERVICE PVT LTD (4 MINUTE)","By Road","CRB","UP 16","CHSA",""
-							+ "123","29/02/2024","09 -Uttar Pradesh","143","51182338000R","BRICK_RED","CHSSS4","E234","KeyN123","Greater Noida Showroom","NA","OK","123223","7997","23222","Bharat I");
-		
+							+ "123","29/02/2024","09 -Uttar Pradesh","143","51182338000R","BRICK_RED","CHS4","E2834","KeyN123","Greater Noida Showroom","NA","OK","123223","79097","23222","Bharat I");
+
 		Thread.sleep(2000);
 		WebElement saveButton = driver.findElement(By.xpath("//input[@id=\"ctl00_cpForm_btnSubmit\"]"));
 	    saveButton.click();

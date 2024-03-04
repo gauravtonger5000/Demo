@@ -64,9 +64,17 @@ public class PurchaseEntryPage {
 	
 	public void selectLoc()
 	{
+		try {
 		WebElement location = driver.findElement(locField);
 		Select selectLoc = new Select(location);
 	    selectLoc.selectByVisibleText("Greater Noida Showroom");
+		}
+		catch(StaleElementReferenceException e)
+		{
+			WebElement location = driver.findElement(locField);
+			Select selectLoc = new Select(location);
+		    selectLoc.selectByVisibleText("Greater Noida Showroom");
+		}
 	}
 	
 	public void selectPurchaseType(String purchaseType)
@@ -88,9 +96,17 @@ public class PurchaseEntryPage {
 	
 	public void Selectsupplier(String supplier)
 	{
+		try {
 		WebElement Selectsupplier = driver.findElement(supplierField);
 		Select sup = new Select(Selectsupplier);
-		sup.selectByVisibleText(supplier);		
+		sup.selectByVisibleText(supplier);
+		}
+	    catch (StaleElementReferenceException e) 
+			{ 
+	    	WebElement Selectsupplier = driver.findElement(supplierField);
+			Select sup = new Select(Selectsupplier);
+			sup.selectByVisibleText(supplier);	
+			}
 	}
 	
 	public void receiptDate(String date) throws InterruptedException
@@ -104,17 +120,32 @@ public class PurchaseEntryPage {
 	
 	public void invoiceFinNo(String invoice)
 	{
-		
+		try {
 		WebElement invoice_fin=driver.findElement(InvoiceTextField);
 		invoice_fin.sendKeys(invoice);
+		}
+		catch(StaleElementReferenceException e)
+		{
+			WebElement invoice_fin=driver.findElement(InvoiceTextField);
+			invoice_fin.sendKeys(invoice);
+		}
 	}
 
 	public void gatePassNo(String gatepass) throws InterruptedException
 	{
+		try {
 		WebElement gatepassno=driver.findElement(GatePassField);
 		gatepassno.sendKeys(gatepass);
 		Thread.sleep(2000);
+		}
+		catch (StaleElementReferenceException e)
+		{
+			WebElement gatepassno=driver.findElement(GatePassField);
+			gatepassno.sendKeys(gatepass);
+			Thread.sleep(2000);
+		}
 	}
+	
 	
 	public void EnterinvoiceDate(String invoicedate) throws InterruptedException {
 	    try {
@@ -132,10 +163,19 @@ public class PurchaseEntryPage {
 	
 	public void selectPlantNo(String plantno) throws InterruptedException
 	{
+		try {
 		WebElement plant=driver.findElement(plantField);
 		Select sc = new Select(plant);
 	     sc.selectByVisibleText(plantno);
-		//	Thread.sleep(2000);
+		Thread.sleep(2000);
+		}
+		catch(StaleElementReferenceException e)
+		{
+			WebElement plant=driver.findElement(plantField);
+			Select sc = new Select(plant);
+		     sc.selectByVisibleText(plantno);
+			Thread.sleep(2000);
+		}
 
 	       
 	}
@@ -158,58 +198,116 @@ public class PurchaseEntryPage {
 	
 	 public void mode_send_by(String sendBY) throws InterruptedException
 	 {
+		 try {
 		 WebElement modeSend = driver.findElement(mode);
 		 modeSend.sendKeys(sendBY);
-			Thread.sleep(2000);
-
+		 }
+		 catch(StaleElementReferenceException e)
+		 {
+			 WebElement modeSend = driver.findElement(mode);
+			 modeSend.sendKeys(sendBY);
+		 }
 	 }
 	 
 	 public void transporter(String transporterName) throws InterruptedException
 	 {
-		 WebElement transporter=driver.findElement(transporterField);
-		 transporter.sendKeys(transporterName);
+		 try {
+			 WebElement transporter=driver.findElement(transporterField);
+			 transporter.sendKeys(transporterName);
 			Thread.sleep(1000);
-
+		 }
+		 catch(StaleElementReferenceException e)
+		 {
+			 WebElement transporter=driver.findElement(transporterField);
+			 transporter.sendKeys(transporterName);
+			Thread.sleep(1000);
+		 }
 	 }
 	 public void transporterRegistrationNo(String transporterReg) throws InterruptedException
 	 {
-		WebElement  transporterRegistration=driver.findElement(transporterRegistrationField);
-		transporterRegistration.sendKeys(transporterReg);
-		Thread.sleep(2000);
-
+		 try {
+			 WebElement  transporterRegistration=driver.findElement(transporterRegistrationField);
+			 transporterRegistration.sendKeys(transporterReg);
+			 Thread.sleep(2000);
+		 }
+		 catch(StaleElementReferenceException e)
+		 {
+			 WebElement  transporterRegistration=driver.findElement(transporterRegistrationField);
+			 transporterRegistration.sendKeys(transporterReg);
+			 Thread.sleep(2000);
+		 }
 	 }
 	 
 	 public void chassisPrefix(String chassis_prefix)
 	 {
-		 WebElement chassisprefix=driver.findElement(chassisPrefixField);
-		 chassisprefix.sendKeys(chassis_prefix);
+		 try {
+			 WebElement chassisprefix=driver.findElement(chassisPrefixField);
+			 chassisprefix.clear();
+			 chassisprefix.sendKeys(chassis_prefix);
+		 }
+		 catch(StaleElementReferenceException e)
+		 {
+			 WebElement chassisprefix=driver.findElement(chassisPrefixField);
+			 chassisprefix.clear();
+			 chassisprefix.sendKeys(chassis_prefix);
+		 }
 	 }
 	 
 	 public void eWayBillNo(String eWay_bill_no)
 	 {
+		 try {
 		 WebElement ewayBill=driver.findElement(eWayBillNoField);
 		 ewayBill.sendKeys(eWay_bill_no);
+		 }
+		 catch(StaleElementReferenceException e)
+		 {
+			 WebElement ewayBill=driver.findElement(eWayBillNoField);
+			 ewayBill.sendKeys(eWay_bill_no);
+
+		 }
 	 }
 	 
 	 public void eWayBillDate(String eWay_bill_date)
 	 {
-		 WebElement eway_billDate=driver.findElement(eWayBillDateField);
-		 eway_billDate.sendKeys(eWay_bill_date);
+		 try {
+			 WebElement eway_billDate=driver.findElement(eWayBillDateField);
+			 eway_billDate.sendKeys(eWay_bill_date);
+		 }
+		 catch(StaleElementReferenceException e)
+		 {
+			 WebElement eway_billDate=driver.findElement(eWayBillDateField);
+			 eway_billDate.sendKeys(eWay_bill_date);
+		 }
 	 }
 	 
 	 public void placeOfSupply(String placeofsupply) throws InterruptedException {
-		 WebElement place_of_supply=driver.findElement(placeOfSupplyField);
-		 Select sp = new Select(place_of_supply);
-		 sp.selectByVisibleText(placeofsupply);
-		 Thread.sleep(2000);
+		 try {
+			 WebElement place_of_supply=driver.findElement(placeOfSupplyField);
+			 Select sp = new Select(place_of_supply);
+			 sp.selectByVisibleText(placeofsupply);
+			 Thread.sleep(2000);
+		 }
+		 catch(StaleElementReferenceException e)
+		 {
+			 WebElement place_of_supply=driver.findElement(placeOfSupplyField);
+			 Select sp = new Select(place_of_supply);
+			 sp.selectByVisibleText(placeofsupply);
+			 Thread.sleep(2000);
+		 }
 	 }
 	 
 	 public void selectModel(String model) throws InterruptedException {
+		 try {
 	        WebElement selectModel = driver.findElement(modelField);
 	        selectModel.sendKeys(model);
-	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	        wait.until(ExpectedConditions.attributeToBeNotEmpty(selectModel, "value"));
-	        //Thread.sleep(2000);
+	       // WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	       // wait.until(ExpectedConditions.attributeToBeNotEmpty(selectModel, "value"));
+		 }
+		 catch(StaleElementReferenceException e)
+		 {
+			  WebElement selectModel = driver.findElement(modelField);
+		        selectModel.sendKeys(model);
+		 }
 	    }
 	    
 	    public void chassis_no(String chassisNo) throws InterruptedException {
@@ -218,10 +316,11 @@ public class PurchaseEntryPage {
 	        Thread.sleep(2000);
 	        chassis.click();
 	        chassis.sendKeys(chassisNo);
-	       // Thread.sleep(3000);
+	     
 	    }
+	   
+	  
 	    
-	 
 	    public void sub_model(String subModel) throws InterruptedException {
 	      try {
 	    	  	
@@ -246,10 +345,13 @@ public class PurchaseEntryPage {
 	            Thread.sleep(1000);
 	            engineNoElement.sendKeys(engineNo);
 	            // Further actions after entering engine number
-	       } catch (StaleElementReferenceException e) {
-	    	   
-	         System.out.println("StaleElementReferenceException occurred: " + e.getMessage());
-	       }
+	       }  catch (StaleElementReferenceException e)
+	        {    
+	        	WebElement engineNoElement = driver.findElement(EngineNoField);
+	            engineNoElement.click();
+	            Thread.sleep(1000);
+	            engineNoElement.sendKeys(engineNo);	       
+	    	}
 	    }
 	    
 	    public void color(String color) throws InterruptedException {
@@ -257,7 +359,7 @@ public class PurchaseEntryPage {
 	    try {
 	    	WebElement colorElement = driver.findElement(colorField);
 	        colorElement.click();
-	        Thread.sleep(4000);
+	        Thread.sleep(6000);
 	        colorElement.click();
 	        Thread.sleep(4000);
 

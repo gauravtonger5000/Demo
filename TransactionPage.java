@@ -15,7 +15,7 @@ public class TransactionPage {
 	
 	public void clickTransaction() {
 		driver.findElement(Transaction).click();
-		System.out.println("Clicked on Transaction");
+		//System.out.println("Clicked on Transaction");
 	}
 	
 	
